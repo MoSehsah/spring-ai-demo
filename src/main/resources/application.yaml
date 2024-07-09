@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-ai-demo
+  config:
+    import: "optional:classpath:/creds.yaml"
+  ai:
+    ollama:
+      chat:
+        enabled: false
+    openai:
+      chat:
+        enabled: true

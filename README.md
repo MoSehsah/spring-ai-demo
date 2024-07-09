@@ -1,0 +1,2 @@
+1. Start your app using [start.spring.io](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=com.tanzu.meta&artifactId=spring-ai-demo&name=spring-ai-demo&description=Demo%20project%20for%20Spring%20AI&packageName=com.tanzu.meta.spring-ai-demo&dependencies=thymeleaf,web,spring-ai-openai,spring-ai-ollama,devtools)
+2. 

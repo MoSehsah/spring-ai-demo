@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Chat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .user-message {
+            color: blue;
+            font-weight: bold;
+        }
+        .service-message {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Chat</h1>
+    <form id="chat-form" th:action="@{/chat}" th:object="${chatPrompt}" method="post">
+        <div class="form-group">
+            <label for="request">Message:</label>
+            <input type="text" class="form-control" id="request" th:field="*{request}" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="response" class="mt-3"></div>
+</div>
+<script>
+    $(document).ready(function(){
+        $("#chat-form").submit(function(event){
+            event.preventDefault();
+            var form = $(this);
+            var userMessage = $('#request').val();
+            $.ajax({
+                type: "POST",
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function(data){
+                    $('#response').append('<p class="user-message">User: ' + userMessage + '</p>');
+                    $('#response').append('<p class="service-message">Model: ' + data.response + '</p>');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
