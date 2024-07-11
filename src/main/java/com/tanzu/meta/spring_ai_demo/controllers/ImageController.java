@@ -1,8 +1,7 @@
 package com.tanzu.meta.spring_ai_demo.controllers;
 
 import com.tanzu.meta.spring_ai_demo.models.ChatPrompt;
-import org.springframework.ai.chat.model.ChatModel;
-import org.springframework.ai.image.Image;
+import com.tanzu.meta.spring_ai_demo.models.ImageRequest;
 import org.springframework.ai.image.ImageModel;
 import org.springframework.ai.image.ImagePrompt;
 import org.springframework.ai.image.ImageResponse;
@@ -25,16 +24,19 @@ public class ImageController {
 
     @GetMapping("/image")
     public String chatForm(Model model) {
+        model.addAttribute("imageRequest", new ImageRequest());
+
         return "imageprompt";
     }
 
     @PostMapping("/image")
-    public ResponseEntity<String> transcribe(String prompt) {
-//        System.out.println("Prompt: " + prompt);
+    public ResponseEntity<String> transcribe(@ModelAttribute ImageRequest imageRequest) {
+        System.out.println("Prompt: " + imageRequest.getRequest());
+//        logger.info("Prompt: " + imageRequest.getRequest());
         ImageResponse response =
                 imageModel.call(
                         new ImagePrompt(
-                                prompt,
+                                imageRequest.getRequest(),
                                 OpenAiImageOptions.builder()
                                         .withQuality("hd")
                                         .withN(1)
