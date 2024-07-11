@@ -1,0 +1,6 @@
+2024-07-11 12:57:26: *****************************************************************************
+2024-07-11 12:57:26: *                     Started SBOM Collection                               *
+2024-07-11 12:57:26: *****************************************************************************
+2024-07-11 12:57:27: Executing command: cd /Users/sehsahm/git-repos/github/MoSehsah/spring-ai-demo
+2024-07-11 12:57:28: Executing command: mvn -q org.cyclonedx:cyclonedx-maven-plugin:2.7.11:makeAggregateBom -DoutputDirectory=/Users/sehsahm/git-repos/github/MoSehsah/spring-ai-demo/assessment/sbom -DoutputName=${project.artifactId} -DschemaVersion=1.4 -Dcyclonedx.skipAttach=true -Dcyclonedx.skipNotDeployed=false -DoutputFormat=json
+2024-07-11 12:57:40: Executing command: rm -rf /Users/sehsahm/git-repos/github/MoSehsah/spring-ai-demo/assessment/sbom
