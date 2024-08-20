@@ -10,3 +10,8 @@ spring:
     openai:
       chat:
         enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
