@@ -10,6 +10,12 @@ spring:
     openai:
       chat:
         enabled: true
+  datasource:
+    name: chatlog
+    generate-unique-name: false
+  jpa:
+    hibernate:
+      ddl-auto: update
 management:
   endpoints:
     web:
