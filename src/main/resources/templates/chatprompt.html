@@ -34,9 +34,10 @@
 <body>
 <div class="container">
     <div class="banner">
-        <img src="/tanzu-logo.png" width="200" alt="VMware Tanzu Logo"/>
+        <a href="/"><img src="/tanzu-logo.png" width="200" alt="VMware Tanzu Logo"/></a>
         <p>Tanzu Spring AI Demo</p>
     </div>
+    <br>
     <h2>Chat</h2>
     <form id="chat-form" th:action="@{/chat}" th:object="${chatPrompt}" method="post">
         <div class="form-group">

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Landing Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .banner p {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 60vh;
+            margin-top: 20px;
+        }
+
+        .link-box {
+            display: inline-block;
+            width: 150px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .link-box:hover {
+            background-color: #e2e6ea;
+        }
+
+        .link-box i {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="banner">
+        <a href="/"><img src="/tanzu-logo.png" width="200" alt="VMware Tanzu Logo"/></a>
+        <p>Tanzu Spring AI Demo</p>
+    </div>
+    <br>
+    <h2>Welcome to Spring AI Demo</h2>
+    <div class="link-container">
+        <a href="/chat" class="link-box">
+            <i class="fas fa-comments"></i><br>
+            Chat
+        </a>
+        <a href="/image" class="link-box">
+            <i class="fas fa-image"></i><br>
+            Image
+        </a>
+    </div>
+</div>
+</body>
+</html>
